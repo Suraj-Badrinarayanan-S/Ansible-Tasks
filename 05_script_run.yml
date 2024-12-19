@@ -1,0 +1,21 @@
+---
+- name: Run a script
+  hosts: all
+
+  tasks:
+  - name: Run script
+    shell: ./test.sh >> test.log
+    args:
+      chdir: /tmp/script/
+      creates: test.log
+
+'''
+his playbook runs a shell script on remote hosts and logs the output.
+
+Key Components:
+Task:
+Run Script:
+Executes the test.sh script located in /tmp/script/.
+Appends the script output to test.log.
+The creates directive ensures the task only runs if test.log does not already exist.
+'''
