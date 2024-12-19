@@ -1,0 +1,29 @@
+---
+- name: File Module
+  hosts: all
+
+  tasks:
+  - name: Creating a file
+    file:
+      path: /tmp/newfile.txt
+      state: absent
+      owner: paul
+      group: paul
+      mode: u=rwx,g=rw,o=r
+
+  - name: Creating a directory
+    file:
+      path: /tmp/myfolder
+      state: absent
+
+'''
+This playbook manages files and directories by creating or removing them with specific ownership and permissions.
+
+Key Components:
+Tasks:
+Create a file:
+Ensures /tmp/newfile.txt is absent (will delete the file if it exists).
+Sets the owner to paul, group to paul, and sets permissions (rwx for owner, rw for group, r for others).
+Create a directory:
+Ensures /tmp/myfolder is absent (will remove the directory if it exists).
+'''
