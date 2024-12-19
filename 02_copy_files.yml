@@ -1,0 +1,26 @@
+---
+- name: Copying files to remote
+  hosts: all
+
+  tasks:
+  - name: Copy files
+    copy:
+      src: /root/myfile.txt
+      dest: /tmp/
+      owner: paul
+      group: paul
+      mode: ugo=rw
+      backup: true
+
+'''
+This playbook copies a file from the control node to all remote hosts with specific ownership, permissions, and backup settings.
+
+Key Components:
+Task:
+Copy Files:
+Copies /root/myfile.txt to /tmp/ on the remote hosts.
+Sets the owner and group to paul.
+Sets permissions to rw for all users.
+Creates a backup of the destination file if it already exists.
+'''
+
