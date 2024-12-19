@@ -1,0 +1,21 @@
+---
+- name: change permissions
+  hosts: all
+
+  tasks:
+  - name: change perm
+    file:
+      path: /tmp/myfile.txt
+      mode: u=r,g=rw
+
+'''
+This playbook changes the permissions of a file on remote hosts.
+
+Key Components:
+Task:
+Change Permissions:
+Modifies the permissions of /tmp/myfile.txt to:
+User (u): Read, write (rw).
+Group (g): Read, write (rw).
+Others (o): No permissions.
+'''
