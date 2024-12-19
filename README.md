@@ -16,7 +16,7 @@ Few of the many tasks are mentioned above in the tabulation.
 ## Usage
 Clone the repository:
    ```bash
-   git clone https://github.com/Suraj-Badrinarayanan-S/ansible-playbooks.git
+   git clone https://github.com/Suraj-Badrinarayanan-S/Ansible-Tasks.git
    cd ansible-playbooks
 
 ## To run a playbook: 
