@@ -1,0 +1,28 @@
+---
+- name: Install and Start the service
+  hosts: all
+  vars:
+    - apps: [yum,httpd,vim,telnet]
+
+  tasks:
+  - name: Installing nginx
+    yum:
+      name: "{{ item }}"
+      state: present
+    tags: i-nginx
+    with_items: "{{ apps }}"
+
+'''
+This playbook installs a list of applications on remote hosts using the yum package manager.
+
+Key Components:
+Variables:
+
+The apps variable defines a list of applications: yum, httpd, vim, and telnet.
+Task:
+Install Applications:
+
+Uses the yum module to install each application in the apps list.
+The with_items loop iterates over the list and installs each application.
+The tags: i-nginx tag is applied to the installation task.
+'''
