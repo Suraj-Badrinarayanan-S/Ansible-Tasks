@@ -18,6 +18,21 @@
       enabled: true
     tags: ss-nginx
 
-    '''
-    Explanation of the above playbook:
+'''
+Explanation of the above playbook:
+
+This playbook installs and starts the specified service (default: httpd) on all hosts.
+
+Key Components:
+Variables:
+app is defined as httpd, which can be replaced with any service name.
+
+Tasks:
+
+Install Service: Installs the service using the yum module.
+Tag: i-nginx
+Start & Enable Service: Ensures the service is started and enabled at boot using the service module.
+Tags: ss-nginx
+'''
+    
     
