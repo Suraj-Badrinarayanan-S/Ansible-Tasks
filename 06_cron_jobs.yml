@@ -1,0 +1,27 @@
+---
+- name: Cron Setup
+  hosts: all
+
+  tasks:
+  - name: Add Cron Job
+    cron:
+      name: Run Test Script
+      minute: 30
+      hour: 20
+      day: 15
+      month: "*"
+      weekday: "*"
+      user: paul
+      job: /tmp/script/test.sh
+      disabled: yes
+
+'''
+This playbook adds a cron job on remote hosts to schedule a script.
+
+Key Components:
+Task:
+Add Cron Job:
+Schedules the execution of /tmp/script/test.sh at 20:30 on the 15th day of every month.
+The cron job runs as the paul user.
+The disabled: yes ensures the cron job is created but not actively running.
+'''
