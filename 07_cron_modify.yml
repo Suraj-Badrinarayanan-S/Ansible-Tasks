@@ -1,0 +1,23 @@
+---
+- name: Modify Cron
+  hosts: all
+
+  tasks:
+  - name: Remove Cron Job
+    cron:
+      name: VARR
+      env: yes
+      user: paul
+      job: /tmp/script/test.sh
+      insertafter: PATH
+      state: absent
+
+'''
+This playbook removes an existing cron job from remote hosts.
+
+Key Components:
+Task:
+Remove Cron Job:
+Removes the cron job named VARR for the user paul that runs /tmp/script/test.sh.
+The insertafter: PATH ensures the job is removed after the PATH entry in the cron configuration.
+'''
