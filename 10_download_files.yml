@@ -1,0 +1,23 @@
+---
+- name: Downlaod files
+  hosts: all
+
+  tasks:
+  - name: Download file
+    get_url:
+      url: https://www.python.org/ftp/python/3.12.2/Python-3.12.2.tar.xz
+      dest: /tmp/script/
+      owner: paul
+      group: paul
+      mode: 0777
+
+'''
+This playbook downloads a file from a URL to a specified location on remote hosts.
+
+Key Components:
+Task:
+Download File:
+Downloads the Python source archive Python-3.12.2.tar.xz from the specified URL.
+Saves the file to /tmp/script/ on the remote hosts.
+Sets ownership to paul and permissions to 0777.
+'''
