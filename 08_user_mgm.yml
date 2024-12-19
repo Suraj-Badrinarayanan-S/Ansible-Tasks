@@ -1,0 +1,25 @@
+---
+- name: User Mgm
+  hosts: all
+
+  tasks:
+  - name: User Creation
+    user:
+      name: "{{ item }}"
+      comment: new user adding for QA Team
+      shell: /bin/bash
+    loop:
+      - user1
+      - user2
+      - user3
+
+'''
+This playbook creates multiple users on remote hosts.
+
+Key Components:
+Task:
+User Creation:
+Creates users user1, user2, and user3 with the comment "new user adding for QA Team".
+Sets the default shell to /bin/bash.
+Uses a loop to create multiple users.
+'''
